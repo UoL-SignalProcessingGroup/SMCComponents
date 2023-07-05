@@ -1,0 +1,14 @@
+[build-system]
+requires = ["pybind11>=2.8", "poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+name = "smccomponents"
+version = "0.1.0"
+description = "A comprehensive toolbox for executing Sequential Monte Carlo (SMC) methods."
+authors = ["Alessandro Varsi <a.varsi@liverpool.ac.uk>", "Matthew Carter <m.j.carter2@liverpool.ac.uk>"]
+
+[tool.poetry.dependencies]
+python = "^3.6"
+numpy = "^1.19"
+mpi4py = "^3.1"
