@@ -15,8 +15,17 @@ SMCComponents contains a number of core components for executing Sequential Mont
 To install SMCComponents, follow these steps:
 
 ```
-pip install pip@git+https://github.com/UoL-SignalProcessingGroup/SMCComponents
+git clone https://github.com/UoL-SignalProcessingGroup/SMCComponents
+
+cd SMCComponents
+
+git submodule init
+git submodule update
+
+pip install .
 ```
+
+Use `pip install -e .` to install the package in development mode.
 
 ## Using SMCComponents
 
