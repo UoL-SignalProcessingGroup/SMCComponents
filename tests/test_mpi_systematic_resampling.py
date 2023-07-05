@@ -1,7 +1,7 @@
 import autograd.numpy as np
 from mpi4py import MPI
 
-from smccomponents.systematic_resampling.mpi import resample as systematic_resample
+from smccomponents.resample.systematic.mpi import resample as systematic_resample
 
 
 if __name__ == "__main__":
@@ -42,7 +42,7 @@ if __name__ == "__main__":
     _x = x[comm.Get_rank() * N_local : (comm.Get_rank() + 1) * N_local]
     _wn = wn[comm.Get_rank() * N_local : (comm.Get_rank() + 1) * N_local]
 
-    _x_new, _logw_new = systematic_resample.resample(_x, _wn, N, N_local, comm, log_likelihood=log_likelihood)
+    _x_new, _logw_new = systematic_resample.resample(_x, _wn, N, N_local, comm)
 
     print(_x_new)
     print(_logw_new)
