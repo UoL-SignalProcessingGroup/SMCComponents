@@ -2,21 +2,20 @@
 ### A comprehensive toolbox for executing Sequential Monte Carlo (SMC) methods
 
 <!-- tempate https://github.com/scottydocs/README-template.md/blob/master/README.md -->
-![GitHub repo size](https://img.shields.io/github/repo-size/mjcarter95/PySMC)
-![GitHub contributors](https://img.shields.io/github/contributors/mjcarter95/PySMC)
-![GitHub stars](https://img.shields.io/github/stars/mjcarter95/PySMC?style=social)
-![GitHub forks](https://img.shields.io/github/forks/mjcarter95/PySMC?style=social)
-![Twitter Follow](https://img.shields.io/twitter/follow/mjcarter955?style=social)
+![GitHub repo size](https://img.shields.io/github/repo-size/UoL-SignalProcessingGroup/SMCComponents)
+![GitHub contributors](https://img.shields.io/github/contributors/UoL-SignalProcessingGroup/SMCComponents)
+![GitHub stars](https://img.shields.io/github/stars/UoL-SignalProcessingGroup/SMCComponents?style=social)
+![GitHub forks](https://img.shields.io/github/forks/UoL-SignalProcessingGroup/SMCComponents?style=social)
 
 SMCComponents contains a number of core components for executing Sequential Monte Carlo methods
 
 
-## Installing PySMC
+## Installing SMCComponents
 
-To install PySMC, follow these steps:
+To install SMCComponents, follow these steps:
 
 ```
-pip install 
+pip install pip@git+https://github.com/UoL-SignalProcessingGroup/SMCComponents
 ```
 
 ## Using SMCComponents
@@ -38,7 +37,7 @@ Alternatively see the GitHub documentation on [creating a pull request](https://
 
 ## Contact
 
-If you want to contact me you can reach me at <m (dot) j (dot) carter (at) liverpool (dot) ac (dot) uk>.
+If you want to contact me you can reach me at 
 
 ## Citation
 
@@ -46,7 +45,7 @@ We appreciate citations as they let us discover what people have been doing with
 
 To cite SMCComponents in publications use:
 
-Carter, M., Devlin, Lee.,  Green, P. & Varsi, A. (2023). SMCComponents (1.0.0). https://github.com/mjcarter95/PySMC
+Varsi, A. & Carter, M. (2023). SMCComponents (1.0.0). https://github.com/UoL-SignalProcessingGroup/SMCComponents
 
 Or use the following BibTeX entry:
 
@@ -57,10 +56,6 @@ Or use the following BibTeX entry:
   year = {2023},
   month = May,
   howpublished = {GitHub},
-  url = {https://github.com/mjcarter95/PySMC}
+  url = {https://github.com/UoL-SignalProcessingGroup/SMCComponents}
 }
 ```
-
-## Acknowledgements
-
-The University of Liverpool and IBM Research for co-funding the EPSRC CDT in Distributed Algorithms doctoral project titled Uncertain Heterogeneous Algorithmic Teamwork
