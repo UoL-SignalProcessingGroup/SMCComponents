@@ -1,5 +1,11 @@
-import autograd.numpy as np
-from mpi4py import MPI
+import numpy as np
+
+try:
+    from mpi4py import MPI
+    mpi_avail = True
+except ImportError:
+    mpi_avail = False
+
 from scipy.special import logsumexp
 
 
@@ -20,3 +26,29 @@ def log_sum_exp(array):
     op.Free()
 
     return log_sum
+
+
+def normalise_weights(logw, comm=None):
+    """
+    Normalises the sample weights
+
+    Args:
+        logw: A list of sample weights on the log scale
+        comm: MPI communicator
+
+    Returns:
+        A list of normalised weights
+
+    """
+
+    index = ~np.isneginf(logw)
+
+    if comm:
+        log_likelihood = log_sum_exp(logw[index])
+    else:
+        log_likelihood = np.max(logw[index]) + np.log(np.sum(np.exp(logw[index] - np.max(logw[index]))))
+
+    # Normalise the weights
+    wn = np.exp(logw[index] - log_likelihood)
+
+    return wn, log_likelihood  # type: ignore
