@@ -2,8 +2,8 @@ import warnings
 import autograd.numpy as np
 from mpi4py import MPI
 
-from .redistribution import fixed_size_redistribution
-from .prefix_sum import inclusive_prefix_sum
+from .mpi.redistribution import fixed_size_redistribution
+from .mpi.prefix_sum import inclusive_prefix_sum
 
 """
 Parallel systematic resampling from [1].
