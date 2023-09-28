@@ -1,4 +1,0 @@
-[submodule "smccomponents/resample/systematic/mpi"]
-	path = smccomponents/resample/systematic/mpi
-	url = https://github.com/AVarsi88/O_logN_parallel_redistribution.git
-	branch = smccomponents
