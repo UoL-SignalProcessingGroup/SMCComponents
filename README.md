@@ -15,17 +15,16 @@ SMCComponents contains a number of core components for executing Sequential Mont
 To install SMCComponents, follow these steps:
 
 ```
-git clone https://github.com/UoL-SignalProcessingGroup/SMCComponents
-
-cd SMCComponents
-
-git submodule init
-git submodule update
-
-pip install .
+pip install git+https://github.com/UoL-SignalProcessingGroup/SMCComponents.git#egg=smccomponents
 ```
 
-Use `pip install -e .` to install the package in development mode.
+To install SMCComponents in development mode, follow these steps:
+
+```
+git clone https://github.com/UoL-SignalProcessingGroup/SMCComponents
+
+pip install -e SMCComponents
+```
 
 ## Using SMCComponents
 
@@ -44,11 +43,7 @@ To contribute to SMCComponents, follow these steps:
 
 Alternatively see the GitHub documentation on [creating a pull request](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request).
 
-## Contact
-
-TO DO: Add contact details
-
-## O(logN) Parallel Redistribution
+## Usage, Citation and Licensing
 
 Published in: [Algorithms](https://doi.org/10.3390/a14120342)
 
