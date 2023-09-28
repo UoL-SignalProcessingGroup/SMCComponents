@@ -2,7 +2,7 @@ import warnings
 import autograd.numpy as np
 from mpi4py import MPI
 
-from .redistribution import fixed_size_redistribution, variable_size_redistribution
+from .redistribution import fixed_size_redistribution
 from .prefix_sum import inclusive_prefix_sum
 
 """
@@ -68,7 +68,7 @@ def check_stability(ncopies, N, N_local, comm):
     return ncopies
 
 
-def resample(x, wn, N, N_local, comm, log_likelihood=None, rng=np.random.default_rng(), variable_redistribution=False):
+def resample(x, wn, N, N_local, comm, log_likelihood=None, rng=np.random.default_rng()):
     """
     Resample the particles.
 
@@ -80,7 +80,6 @@ def resample(x, wn, N, N_local, comm, log_likelihood=None, rng=np.random.default
         comm: The MPI communicator
         log_likelihood: The log likelihood of the current samples
         rng: A random number generator
-        variable_redistribution: Whether to use fixed or variable size redistribution
 
     Returns:
         x_new: A list of resampled samples
@@ -94,10 +93,7 @@ def resample(x, wn, N, N_local, comm, log_likelihood=None, rng=np.random.default
     ncopies = check_stability(ncopies, N, N_local, comm)
 
     # Redistribute the samples
-    if variable_redistribution:
-        x_new = variable_size_redistribution(x, ncopies)
-    else:
-        x_new = fixed_size_redistribution(x, ncopies)
+    x_new = fixed_size_redistribution(x, ncopies)
 
     if len(x_new) != N_local:
         raise ValueError(f"Number of resampled samples ({len(x_new)}) does not equal N_local ({N_local})")

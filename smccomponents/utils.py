@@ -8,8 +8,6 @@ except ImportError:
 
 from scipy.special import logsumexp
 
-from .tree import Tree
-
 
 def LSE(xmem, ymem, dt):
     x = np.frombuffer(xmem, dtype='d')
